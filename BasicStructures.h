@@ -80,12 +80,6 @@ struct RandomStruct
 	int Min, Max;
 };
 
-//3D Matrix
-struct Matrix3DStruct
-{
-	float Data[12];
-};
-
 //obvious
 struct RectangleStruct
 {
