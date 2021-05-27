@@ -11,6 +11,10 @@ struct ColorStruct
 		: R(r), G(g), B(b)
 	{ }
 
+	ColorStruct(const ColorStruct& c)
+		: R(c.R), G(c.G), B(c.B)
+	{ }
+
 	inline explicit ColorStruct(Color16Struct const color);
 
 	bool operator == (ColorStruct const rhs) const {
