@@ -80,7 +80,7 @@ public:
 	    { JMP_STD(0x732D00); }
 
     // should be in Vector3 but YRpp has it templated so eh
-    static Vector3D<float>* __fastcall MatrixMultiply(Vector3D<float>* result, Matrix3DStruct* mtx, Vector3D<float>* vec)
+    static Vector3D<float> __fastcall MatrixMultiply(Matrix3DStruct* mtx, Vector3D<float>* vec)
         { JMP_STD(0x5AFB80); }
 
 	static bool &bVideoBackBuffer;
