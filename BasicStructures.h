@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Matrix3D.h>
+
 struct Color16Struct;
 
 //used for most colors

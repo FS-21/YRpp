@@ -75,10 +75,10 @@ public:
 
     // TODO fixup functions with invisible args
 
-	virtual Matrix3DStruct __stdcall Draw_Matrix(int* key)
+	virtual Matrix3D __stdcall Draw_Matrix(int* key)
 		{ JMP_STD(0x55A730); }
 
-	virtual Matrix3DStruct __stdcall Shadow_Matrix(int* key)
+	virtual Matrix3D __stdcall Shadow_Matrix(int* key)
 		{ JMP_STD(0x55A7D0); }
 
 	virtual Point2D* __stdcall Draw_Point(Point2D* pPoint)

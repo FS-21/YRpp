@@ -102,8 +102,8 @@ public:
 	DWORD __TimerIncriment;
 	TimerStruct StartTime;
 	int SelectableCount;
-	Matrix3DStruct unusedmatrix3d;
-	Matrix3DStruct matrix3d_DE4;
+	Matrix3D unusedmatrix3d;
+	Matrix3D matrix3d_DE4;
 	int field_E14;
 };
 

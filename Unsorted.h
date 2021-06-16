@@ -79,11 +79,12 @@ public:
 	static bool IsTypeSelecting()
 	    { JMP_STD(0x732D00); }
 
-    // should be in Vector3 but YRpp has it templated so eh
-	static Vector3D<float>* __fastcall MatrixMultiply(Vector3D<float>* ret, Matrix3DStruct* mtx, Vector3D<float>* vec)
+    // FIXME move to vector3
+	static Vector3D<float>* __fastcall MatrixMultiply(Vector3D<float>* ret, Matrix3D* mtx, Vector3D<float>* vec)
 		{ JMP_STD(0x5AFB80); }
 
-	static Vector3D<float> MatrixMultiply(Matrix3DStruct* const mtx, Vector3D<float>* const vec)
+	// FIXME move to vector3
+	static Vector3D<float> MatrixMultiply(Matrix3D* const mtx, Vector3D<float>* const vec)
 	{
 		Vector3D<float> ret;
 		MatrixMultiply(&ret, mtx, vec);
