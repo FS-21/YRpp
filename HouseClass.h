@@ -297,10 +297,19 @@ public:
 	void RespawnStartingForces()
 		{ JMP_THIS(0x50D440); }
 
+	// flags the house to be defeated once its borrowed time expires,
+	// unless it is already flagged to win, lose or die
+	bool FlagToDie()
+		{ JMP_THIS(0x4FC980); }
+
 	BYTE Win(bool bSavourSomething)
 		{ JMP_THIS(0x4FC9E0); }
 	BYTE Lose(bool bSavourSomething)
 		{ JMP_THIS(0x4FCBD0); }
+
+	// counts human-controlled houses other than this one that are not yet defeated
+	int CountOtherUndefeatedHumanHouses() const
+		{ JMP_THIS(0x5E2BA0); }
 
 	void RegisterJustBuilt(TechnoClass* pTechno)
 		{ JMP_THIS(0x4FB6B0); }
@@ -496,8 +505,15 @@ public:
 		return this->IsHumanPlayer || this->IsInPlayerControl;
 	}
 
-	// Target ought to be Object, I imagine, but cell doesn't work then
-	void __fastcall SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, Mission SetMission, AbstractClass *Target, ObjectClass *Destination)
+	void __fastcall SendParadropPlanes(int aircraftTypeIdx, int aircraftCount, Mission mission, AbstractClass* pTarget, AbstractClass* pDestination,
+		int infantryTypeIdx, int infantryCount)
+		{ JMP_STD(0x65E660); }
+
+	void __fastcall SendAirstrikePlanes(int aircraftTypeIdx, int aircraftCount, Mission mission, AbstractClass* pTarget, AbstractClass* pDestination,
+		int infantryTypeIdx, int infantryCount, AirstrikeClass* pSender)
+		{ JMP_STD(0x65E850); }
+
+	void __fastcall SendSpyPlanes(int aircraftTypeIdx, int aircraftCount, Mission mission, AbstractClass* pTarget, AbstractClass* pDestination)
 		{ JMP_STD(0x65EAB0); }
 
 	// registering in prereq counters (all technoes get logged, but only buildings get checked on validation... wtf)
