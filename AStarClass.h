@@ -21,6 +21,7 @@ static_assert(sizeof(AStarClass_PassabilityData) == 0x3E8);
 
 class PathFinderData
 {
+public:
 	CellStruct StartCell;
 	int TotalDistance;
 	int PathLength;
