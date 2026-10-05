@@ -133,6 +133,8 @@ public:
 	DEFINE_ARRAY_REFERENCE(wchar_t, [0x42u], TooltipBuffer, 0xB07BC4u);
 	DEFINE_REFERENCE(ToggleClass, ToggleRepairButton, 0xB0B3A0);
 	DEFINE_ARRAY_REFERENCE(ShapeButtonClass, [4], TabButtons, 0xB07C48u);
+	DEFINE_REFERENCE(ShapeButtonClass, ScrollUpButton, 0xB0B328u);
+	DEFINE_REFERENCE(ShapeButtonClass, ScrollDownButton, 0xB0B408u);
 
 	void SidebarNeedsRepaint(int mode = 0) {
 		this->SidebarNeedsRedraw = true;
