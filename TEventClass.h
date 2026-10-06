@@ -56,7 +56,8 @@ public:
 		HouseClass* pHouse,
 		ObjectClass* Object,
 		CDTimerClass* ActivationFrame,
-		bool* isRepeating
+		bool* isRepeating,
+		TechnoClass* pSource = nullptr
 	) const
 		JMP_THIS(0x71E940);
 
