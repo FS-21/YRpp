@@ -3,6 +3,7 @@
 #include <AbstractClass.h>
 
 class TechnoClass;
+class EventClass;
 
 class PlanningBranchClass;
 // static_assert(sizeof(PlanningBranchClass) == 0x78);
@@ -11,7 +12,7 @@ class PlanningMemberClass
 {
 public:
 	TechnoClass* Owner;
-	DWORD Packet;
+	EventClass* Order;
 	int field_8;
 	char field_C;
 };
@@ -25,6 +26,12 @@ public:
 	DEFINE_REFERENCE(DynamicVectorClass<PlanningNodeClass*>, Unknown3, 0xAC4C98u)
 
 	DEFINE_REFERENCE(bool, PlanningModeActive, 0xAC4CF4u)
+
+	static void __cdecl DrawAllBackground()
+		JMP_STD(0x63B0A0);
+
+	static void __cdecl DrawAllForeground()
+		JMP_STD(0x63B150);
 
 	//===========================================================================
 	//===== Properties ==========================================================
