@@ -12,10 +12,9 @@ class MissionControlClass
 {
 	public:
 		DEFINE_ARRAY_REFERENCE(MissionControlClass, [0x20], Array, 0xA8E3A8)
-		DEFINE_ARRAY_REFERENCE(const char*, [0x20], Names, 0xA8E3A8)
-
-		static MissionControlClass* __fastcall Find(const char* pName)
-			{ JMP_STD(0x5B3910); }
+		// Mission names are NOT stored here: they live in GameStrings::MissionName (const char*[0x20] @ 0x816CAC),
+		// which FindIndex() iterates (strcmpi loop) and FindName() indexes. A previous "Names" declaration
+		// pointed at Array's own address.
 
 		static Mission __fastcall FindIndex(const char* pName)
 			{ JMP_STD(0x5B3910); }

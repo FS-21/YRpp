@@ -38,7 +38,12 @@ struct TabDataClass
 	bool ValueChanged;
 	PROTECTED_PROPERTY(BYTE, align_B);
 	int ValueDelta;
+
+	TabDataClass()
+		{ JMP_THIS(0x4A2350); }
 };
+
+static_assert(sizeof(TabDataClass) == 0x10);
 
 class TabClass : public SidebarClass, public INoticeSink
 {
@@ -55,6 +60,8 @@ public:
 	PROTECTED_PROPERTY(BYTE, padding_5547);
 };
 
+static_assert(sizeof(TabClass) == 0x5548);
+
 class ScrollClass : public TabClass
 {
 public:
@@ -70,6 +77,8 @@ public:
 	bool IsMouseDown; // 0x555A
 	PROTECTED_PROPERTY(BYTE, padding_555B);
 };
+
+static_assert(sizeof(ScrollClass) == 0x555C);
 
 class NOVTABLE MouseClass : public ScrollClass
 {
@@ -90,8 +99,10 @@ public:
 	virtual MouseCursorType GetLastMouseCursor() override RT(MouseCursorType);
 
 	bool MouseCursorIsMini;
-	PROTECTED_PROPERTY(BYTE, unknown_byte_5559[3]);
+	PROTECTED_PROPERTY(BYTE, padding_555D[3]);
 	MouseCursorType MouseCursorIndex;
 	MouseCursorType MouseCursorLastIndex;
 	int MouseCursorCurrentFrame;
 };
+
+static_assert(sizeof(MouseClass) == 0x556C);
